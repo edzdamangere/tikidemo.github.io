@@ -54,6 +54,7 @@
             box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
             transform: scale(1.05);
             border-color: rgba(249, 249, 249, 0.8);
+            z-index: 50;
         }
 
         /* Dynamic Nav Transitions */
@@ -156,26 +157,47 @@
                 <div class="w-16 h-1 bg-[#E21E26] mt-2"></div>
             </div>
             
-            <div class="flex space-x-6 overflow-x-auto hide-scroll pb-10 pt-2 px-10">
-                <div onclick="openProject('Untold History', 'Documentary Series', 'A landmark series re-examining the pivotal moments of Pacific history through a uniquely indigenous lens. Untold History brings forth narratives that have often been overlooked or misconstrued.', 'bg-gradient-to-br from-rose-500 to-indigo-600')" 
-                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-rose-500 to-indigo-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Untold History</div>
+            <!-- Widths reduced to keep thumbnails smaller on large screens, pt-8 to prevent scale clipping -->
+            <div class="flex space-x-5 overflow-x-auto hide-scroll pb-12 pt-8 px-10">
+                <div onclick="openProject('Untold History', 'Documentary Series', 'A landmark series re-examining the pivotal moments of Pacific history through a uniquely indigenous lens.', 'bg-gradient-to-br from-rose-500 to-indigo-600')" 
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-rose-500 to-indigo-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Untold History</div>
                 </div>
-                <div onclick="openProject('Pacific Beats', 'Music & Culture', 'Celebrating the rhythm of the islands, Pacific Beats showcases the evolution of music and performance across the Great Blue.', 'bg-gradient-to-br from-amber-500 to-red-600')"
-                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-amber-500 to-red-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Beats</div>
+                <div onclick="openProject('Pacific Beats', 'Music & Culture', 'Celebrating the rhythm of the islands, Pacific Beats showcases the evolution of music and performance.', 'bg-gradient-to-br from-amber-500 to-red-600')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-amber-500 to-red-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Beats</div>
                 </div>
-                <div onclick="openProject('Island Lifestyle', 'Lifestyle programming', 'A vibrant exploration of the daily lives, food, and traditions that make Pacific island life unique and enduring.', 'bg-gradient-to-br from-emerald-500 to-cyan-600')"
-                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-emerald-500 to-cyan-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Island Lifestyle</div>
+                <div onclick="openProject('Island Lifestyle', 'Lifestyle', 'A vibrant exploration of the daily lives and traditions that make Pacific island life unique.', 'bg-gradient-to-br from-emerald-500 to-cyan-600')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-emerald-500 to-cyan-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Island Lifestyle</div>
                 </div>
-                <div onclick="openProject('Ocean Voyagers', 'History & Navigation', 'Telling the stories of the master navigators who traversed the vast Pacific using only the stars and the sea.', 'bg-gradient-to-br from-purple-500 to-blue-600')"
-                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-purple-500 to-blue-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Ocean Voyagers</div>
+                <div onclick="openProject('Ocean Voyagers', 'History', 'Telling the stories of the master navigators who traversed the vast Pacific using the stars.', 'bg-gradient-to-br from-purple-500 to-blue-600')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-purple-500 to-blue-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Ocean Voyagers</div>
                 </div>
-                <div onclick="openProject('Cultural Legacy', 'Digital Archive', 'A digital tribute to the elders and knowledge keepers who ensure our cultural legacy is passed to future generations.', 'bg-gradient-to-br from-blue-500 to-teal-600')"
-                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-blue-500 to-teal-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Cultural Legacy</div>
+                <div onclick="openProject('Cultural Legacy', 'Archive', 'A digital tribute to the knowledge keepers who ensure our legacy is passed to future generations.', 'bg-gradient-to-br from-blue-500 to-teal-600')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-blue-500 to-teal-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Cultural Legacy</div>
+                </div>
+                <div onclick="openProject('Deep Blue', 'Environment', 'Exploring the vital relationship between our people and the vast ocean that surrounds us.', 'bg-gradient-to-br from-cyan-500 to-blue-800')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-cyan-500 to-blue-800">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Deep Blue</div>
+                </div>
+                <div onclick="openProject('Village Voices', 'Community', 'Direct narratives from the heart of our villages, shared in their own words and rhythms.', 'bg-gradient-to-br from-orange-500 to-rose-700')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-orange-500 to-rose-700">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Village Voices</div>
+                </div>
+                <div onclick="openProject('Pacific Kitchen', 'Culinary', 'A celebration of the flavors and traditional cooking methods that define our regional cuisine.', 'bg-gradient-to-br from-yellow-500 to-emerald-700')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-yellow-500 to-emerald-700">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Kitchen</div>
+                </div>
+                <div onclick="openProject('Rising Tides', 'Social Issues', 'Documenting the resilience of island nations in the face of modern global challenges.', 'bg-gradient-to-br from-slate-500 to-indigo-900')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-slate-500 to-indigo-900">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Rising Tides</div>
+                </div>
+                <div onclick="openProject('The Voyagers', 'Art', 'Highlighting the traditional carvers and navigators who keep our heritage afloat.', 'bg-gradient-to-br from-lime-500 to-emerald-900')"
+                     class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-lime-500 to-emerald-900">
+                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">The Voyagers</div>
                 </div>
             </div>
         </section>
@@ -188,25 +210,25 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div onclick="openBio('Heke Ika', 'Creative Director', 'Heke is the visionary behind our visual identity, dedicated to documenting the shifting tides of Pacific culture with truth and soul.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop')" 
+                <div onclick="openBio('Heke Ika', 'Creative Director', 'Heke is the visionary behind our visual identity, dedicated to documenting the shifting tides of Pacific culture.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop')" 
                      class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Heke Ika">
                     <h3 class="text-base font-bold text-white text-center">Heke Ika</h3>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Creative</p>
                 </div>
-                <div onclick="openBio('Mele Tu\'i', 'Lead Producer', 'With a master\'s touch in organization and flow, Mele ensures our narratives bridge historical depths and modern horizons.', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop')"
+                <div onclick="openBio('Mele Tu\'i', 'Lead Producer', 'With a master\'s touch in organization, Mele ensures our narratives bridge historical depths and modern horizons.', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop')"
                      class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Mele Tu'i">
                     <h3 class="text-base font-bold text-white text-center">Mele Tu'i</h3>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Producer</p>
                 </div>
-                <div onclick="openBio('Siale M.', 'Historical Researcher', 'Siale uncovers the untold threads of our history within the deep Pacific archives, providing the truth that fuels our stories.', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop')"
+                <div onclick="openBio('Siale M.', 'Historical Researcher', 'Siale uncovers the untold threads of our history within the deep Pacific archives.', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop')"
                      class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Siale M.">
                     <h3 class="text-base font-bold text-white text-center">Siale M.</h3>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">History</p>
                 </div>
-                <div onclick="openBio('Laka S.', 'Director of Photography', 'Laka defines the visual pulse of Tikilounge, prioritizing natural light and visceral intimacy in every frame.', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop')"
+                <div onclick="openBio('Laka S.', 'Director of Photography', 'Laka defines the visual pulse of Tikilounge, prioritizing natural light and visceral intimacy.', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop')"
                      class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Laka S.">
                     <h3 class="text-base font-bold text-white text-center">Laka S.</h3>
@@ -234,7 +256,7 @@
                     <p id="modal-description" class="text-gray-300 font-light leading-relaxed text-lg mb-8">Description goes here...</p>
                     
                     <div id="modal-footer" class="flex space-x-4">
-                        <!-- Extra links or CTAs -->
+                        <!-- Social links or CTAs -->
                     </div>
                 </div>
             </div>
@@ -292,7 +314,7 @@
             document.getElementById('modal-subtitle').innerText = category;
             document.getElementById('modal-description').innerText = info;
             document.getElementById('modal-footer').innerHTML = `
-                <button class="bg-[#E21E26] text-white px-6 py-2 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-red-700 transition-colors">View Details</button>`;
+                <button class="bg-[#E21E26] text-white px-6 py-2 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-red-700 transition-colors">View Project</button>`;
             
             showModal();
         }
