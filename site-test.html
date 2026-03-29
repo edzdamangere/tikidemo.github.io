@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coconet | Portal Viewport</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0b0c0f;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 72px;
+            height: 100vh;
+            background-color: #0b0c0f;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Tooltip style labels on hover */
+        .nav-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            color: #81838d;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-item.active {
+            color: white;
+            background-color: #E21E26;
+            box-shadow: 0 4px 15px rgba(226, 30, 38, 0.4);
+        }
+
+        /* Label Tooltip */
+        .nav-label {
+            position: absolute;
+            left: 80px;
+            background: #1c1e25;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-item:hover .nav-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Viewport Container */
+        #main-viewport {
+            margin-left: 72px;
+            width: calc(100% - 72px);
+            height: 100vh;
+            border: none;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <nav id="sidebar">
+        <!-- Home -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/" target="content-frame" class="nav-item active" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span class="nav-label">Home</span>
+        </a>
+
+        <!-- Our Stories -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/stories.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+            <span class="nav-label">Our Stories</span>
+        </a>
+
+        <!-- Portfolio Item / Doco -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/doco.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span class="nav-label">Documentaries</span>
+        </a>
+
+        <!-- Blog Post Style -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/blog-post.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+            <span class="nav-label">Blog Style</span>
+        </a>
+
+        <!-- About Us -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/about-us.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="nav-label">About Us</span>
+        </a>
+
+        <!-- Our Team -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/team.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <span class="nav-label">Our Team</span>
+        </a>
+
+        <!-- Error 404 -->
+        <a href="https://edzdamangere.github.io/tikidemo.github.io/404.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <span class="nav-label">Error 404</span>
+        </a>
+
+        <!-- Contact Us -->
+        <div class="mt-auto">
+            <a href="https://edzdamangere.github.io/tikidemo.github.io/contact.html" target="content-frame" class="nav-item" onclick="setActive(this)">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- CONTENT VIEWPORT -->
+    <iframe id="main-viewport" name="content-frame" src="https://edzdamangere.github.io/tikidemo.github.io/"></iframe>
+
+    <script>
+        function setActive(element) {
+            // Remove active class from all items
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => item.classList.remove('active'));
+            
+            // Add active class to clicked item
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
