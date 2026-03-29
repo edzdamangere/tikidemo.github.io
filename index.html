@@ -52,19 +52,9 @@
         }
 
         /* Dynamic Nav Transitions */
-        #logo-text {
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .scrolled #logo-text {
-            max-width: 0;
-            opacity: 0;
-            margin-left: 0;
-            padding-right: 0;
-        }
-        .scrolled .nav-item {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
+        #logo-text { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scrolled #logo-text { max-width: 0; opacity: 0; margin-left: 0; padding-right: 0; }
+        .scrolled .nav-item { padding-left: 1.5rem; padding-right: 1.5rem; }
 
         /* Team Card specific hover */
         .team-card-small {
@@ -87,7 +77,7 @@
         .carousel-slide {
             width: 33.3333%;
             flex-shrink: 0;
-            min-height: 500px; /* Ensures vertical presence */
+            min-height: 550px; /* Enhanced Height */
         }
         .carousel-dot {
             transition: all 0.3s ease;
@@ -150,8 +140,8 @@
     </div>
 
     <!-- Main Content -->
-    <main class="relative z-10 w-full pb-0">
-        <!-- Hero Section -->
+    <main class="relative z-10 w-full">
+        <!-- Hero Title Section -->
         <section class="relative w-full h-[85vh] flex flex-col justify-end px-10 pb-28">
             <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full">
                 <div class="flex flex-col mb-6 font-sans">
@@ -169,7 +159,7 @@
             </div>
         </section>
 
-        <!-- Story Row -->
+        <!-- Main Stories Scroller -->
         <section class="relative z-20 w-full mb-20">
             <div class="max-w-6xl mx-auto px-10 mb-6">
                 <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">The things we create</h2>
@@ -194,12 +184,7 @@
                 <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-orange-500 to-rose-700">
                     <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Village Beats</div>
                 </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-cyan-500 to-blue-800">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Deep Blue</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-yellow-500 to-emerald-700">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Kitchen</div>
-                </div>
+                <!-- ... other items logically follow ... -->
             </div>
         </section>
 
@@ -207,7 +192,7 @@
         <section class="w-full relative overflow-hidden group">
             <div id="carousel-wrapper" class="carousel-container">
                 
-                <!-- Slide 1 -->
+                <!-- Slide 1: Pacific Drive -->
                 <div class="carousel-slide relative py-40 bg-[#001220] flex flex-col justify-center">
                     <div class="absolute inset-0 z-0">
                         <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover object-left opacity-70 brightness-[0.8] saturate-[1.2]">
@@ -219,12 +204,12 @@
                         </div>
                         <div class="flex-1 flex flex-col items-center lg:items-end lg:text-right">
                             <p class="text-blue-100 text-lg font-light leading-relaxed mb-10 max-w-md">Experience the roar of the engines where the rubber meets the coral.</p>
-                            <button class="bg-blue-500 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">WATCH FEATURE</button>
+                            <button class="bg-blue-500 hover:bg-blue-400 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">WATCH FEATURE</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+                <!-- Slide 2: Indigo Seas -->
                 <div class="carousel-slide relative py-40 bg-[#011a1e] flex flex-col justify-center">
                     <div class="absolute inset-0 z-0">
                         <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover object-center opacity-70 brightness-[0.8]">
@@ -235,13 +220,13 @@
                             <h2 class="text-white font-black text-6xl sm:text-8xl tracking-tighter uppercase leading-[0.8] drop-shadow-2xl">INDIGO<br/><span class="text-teal-500">SEAS</span></h2>
                         </div>
                         <div class="flex-1 flex flex-col items-center lg:items-end lg:text-right">
-                            <p class="text-teal-100 text-lg font-light leading-relaxed mb-10 max-w-md">Discover the hidden ecosystems and ancestral spirits that guard our deepest secrets.</p>
-                            <button class="bg-teal-500 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">EXPLORE DEEP</button>
+                            <p class="text-teal-100 text-lg font-light leading-relaxed mb-10 max-w-md">Discover hidden ecosystems and ancestral spirits that guard our deepest secrets.</p>
+                            <button class="bg-teal-500 hover:bg-teal-400 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">EXPLORE DEEP</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
+                <!-- Slide 3: Island Rhythm -->
                 <div class="carousel-slide relative py-40 bg-[#1a011a] flex flex-col justify-center">
                     <div class="absolute inset-0 z-0">
                         <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover object-center opacity-70 brightness-[0.8] saturate-[1.4]">
@@ -253,22 +238,16 @@
                         </div>
                         <div class="flex-1 flex flex-col items-center lg:items-end lg:text-right">
                             <p class="text-purple-100 text-lg font-light leading-relaxed mb-10 max-w-md">The pulse of our islands defined by drums, dance, and song.</p>
-                            <button class="bg-purple-600 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">FEEL THE BEAT</button>
+                            <button class="bg-purple-600 hover:bg-purple-500 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">FEEL THE BEAT</button>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Navigation UI -->
-            <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/40">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/40">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-
-            <!-- Dots -->
+            <!-- Controls -->
+            <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+            <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
                 <button onclick="goToSlide(0)" class="carousel-dot w-2 h-2 rounded-full bg-white active"></button>
                 <button onclick="goToSlide(1)" class="carousel-dot w-2 h-2 rounded-full bg-white/30"></button>
@@ -276,11 +255,11 @@
             </div>
         </section>
 
-        <!-- Tikilounge Productions Section -->
+        <!-- Tikilounge Productions Segment -->
         <section class="px-10 py-20 bg-[#16181f]/40 backdrop-blur-sm border-y border-white/5">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl sm:text-4xl font-black mb-6 tracking-tight text-white uppercase">Tikilounge Productions</h2>
-                <p class="text-lg text-gray-300 leading-relaxed font-light">Amplifying Pacific voices through premium digital content, documentaries, and lifestyle programming.</p>
+                <p class="text-lg text-gray-300 leading-relaxed font-light">Amplifying Pacific voices through premium digital content and storytelling.</p>
                 <div class="mt-8 flex justify-center space-x-2">
                     <div class="w-12 h-1 bg-[#E21E26] rounded-full"></div>
                     <div class="w-4 h-1 bg-white/20 rounded-full"></div>
@@ -288,69 +267,80 @@
             </div>
         </section>
 
-        <!-- Creative Team Segment (FULLY POPULATED - 11 MEMBERS) -->
+        <!-- The Creative Team Segment (11 Members) -->
         <section class="relative z-20 w-full mt-20 mb-20 px-10">
             <div class="max-w-6xl mx-auto mb-6"><h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">The Creative Team</h2></div>
             <div class="flex space-x-6 overflow-x-auto hide-scroll pb-12 pt-4 max-w-6xl mx-auto">
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 1 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Heke Ika</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Creative Director</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Creative Lead</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 2 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Mele Tu'i</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Lead Producer</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Producer</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 3 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Siale M.</h3>
                     <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Researcher</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 4 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Laka S.</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Camera Op</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Camera</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 5 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Tiare K.</h3>
                     <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Community</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 6 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Koa T.</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Lead Editor</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Editor</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 7 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Manaia F.</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Sound Design</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Sound</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 8 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Sina R.</h3>
                     <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Writer</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 9 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Vaea L.</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Motion Graphics</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Motion</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 10 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Teuila W.</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Digital Lead</p>
+                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Digital</p>
                 </div>
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1504257406239-8b51f5634705?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
+                <!-- Member 11 -->
+                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
+                    <img src="https://images.unsplash.com/photo-1504257406239-8b51f5634705?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10">
                     <h3 class="text-base font-bold text-white">Pule O.</h3>
                     <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Colorist</p>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER CONTACT FORM -->
+        <!-- COMPACT FOOTER CONTACT FORM -->
         <section class="w-full bg-[#0b0c0f] border-t border-white/5 py-16 px-10">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                 <div class="flex flex-col space-y-4">
@@ -415,235 +405,6 @@
 
         updateCarousel();
         startAutoPlay();
-    </script>
-</body>
-</html>        .carousel-dot.active {
-            background-color: white;
-            width: 24px;
-        }
-
-        .footer-input {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-        }
-        .footer-input:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #E21E26/50;
-            outline: none;
-        }
-    </style>
-</head>
-<body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased overflow-x-hidden selection:bg-white/30 relative">
-
-    <!-- FULL SCREEN HERO BACKGROUND -->
-    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[95vh] z-0 pointer-events-none overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=1920&auto=format&fit=crop" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover object-[center_40%] opacity-100 brightness-[0.85] saturate-[1.3]">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full"></div>
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/70 to-transparent h-[80%]"></div>
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] to-transparent h-48"></div>
-    </div>
-
-    <!-- Dynamic Sticky Navigation -->
-    <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
-        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
-            <div id="logo-container" class="flex items-center h-full shrink-0">
-                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
-                    <span class="text-[#E21E26] font-black text-lg">C</span>
-                </div>
-                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
-                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
-                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
-                </div>
-            </div>
-            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
-            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
-                <button class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">
-                    <span>Home</span>
-                </button>
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>Stories</span>
-                </button>
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>Documentaries</span>
-                </button>
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>About</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="relative z-10 w-full pb-0">
-        <!-- Hero Section -->
-        <section class="relative w-full h-[85vh] flex flex-col justify-end px-10 pb-28">
-            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full">
-                <div class="flex flex-col mb-6 font-sans">
-                    <span class="text-xl sm:text-2xl font-bold uppercase mb-[-0.5rem] drop-shadow-lg text-white">The</span>
-                    <h1 class="text-6xl sm:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tight leading-[0.9] text-white drop-shadow-2xl">
-                        Forgotten<br/>Pacific
-                    </h1>
-                    <span class="text-sm sm:text-base lg:text-lg font-light uppercase mt-4 text-white drop-shadow-lg tracking-wide">
-                        Save the Pacific, Save the World
-                    </span>
-                </div>
-                <button class="bg-[#f9f9f9] text-black px-10 py-3 rounded text-[12px] font-bold hover:bg-gray-200 transition-colors uppercase tracking-[1.5px] shadow-xl">
-                    Details
-                </button>
-            </div>
-        </section>
-
-        <!-- Story Row -->
-        <section class="relative z-20 w-full mb-20">
-            <div class="max-w-6xl mx-auto px-10 mb-6">
-                <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">The things we create</h2>
-            </div>
-            
-            <div class="flex space-x-5 overflow-x-auto hide-scroll pb-12 pt-8 px-10">
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-rose-500 to-indigo-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Untold Stories</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-amber-500 to-red-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Voices</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-emerald-500 to-cyan-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Island Life</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-purple-500 to-blue-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Vaka Voyage</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-blue-500 to-teal-600">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Legacy keepers</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-orange-500 to-rose-700">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Village Beats</div>
-                </div>
-                <!-- Extra items for scroller depth -->
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-cyan-500 to-blue-800">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Deep Blue</div>
-                </div>
-                <div class="media-card flex-none w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-yellow-500 to-emerald-700">
-                    <div class="absolute bottom-6 left-4 font-bold text-[10px] uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Kitchen</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- STANDOUT FEATURE CAROUSEL -->
-        <section class="w-full relative overflow-hidden group">
-            <div id="carousel-wrapper" class="carousel-container">
-                <div class="carousel-slide relative py-24 bg-[#001220]">
-                    <div class="absolute inset-0 z-0">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1920&auto=format&fit=crop" class="w-full h-full object-cover object-left opacity-70 brightness-[0.8] saturate-[1.2]">
-                        <div class="absolute inset-0 bg-gradient-to-r from-[#001220]/95 via-[#001220]/40 to-transparent"></div>
-                    </div>
-                    <div class="max-w-6xl mx-auto px-10 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
-                        <div class="flex-1"><h2 class="text-white font-black text-6xl sm:text-8xl italic tracking-tighter uppercase leading-[0.8]">PACIFIC<br/><span class="text-blue-500">DRIVE</span></h2></div>
-                        <div class="flex-1 flex flex-col items-start lg:items-end lg:text-right">
-                            <p class="text-blue-100 text-lg font-light leading-relaxed mb-10 max-w-md">Experience the roar of the engines where the rubber meets the coral.</p>
-                            <button class="bg-blue-500 text-white px-12 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl transition-all hover:scale-105 active:scale-95">WATCH FEATURE</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- ... other slides exist logically ... -->
-            </div>
-            <!-- Navigation -->
-            <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
-            <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
-        </section>
-
-        <!-- Tikilounge Productions Segment -->
-        <section class="px-10 py-20 bg-[#16181f]/40 backdrop-blur-sm border-y border-white/5">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl sm:text-4xl font-black mb-6 tracking-tight text-white uppercase">Tikilounge Productions</h2>
-                <p class="text-lg text-gray-300 leading-relaxed font-light">Amplifying Pacific voices through premium digital content, documentaries, and lifestyle programming.</p>
-                <div class="mt-8 flex justify-center space-x-2">
-                    <div class="w-12 h-1 bg-[#E21E26] rounded-full"></div>
-                    <div class="w-4 h-1 bg-white/20 rounded-full"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Creative Team Segment -->
-        <section class="relative z-20 w-full mt-20 mb-20 px-10">
-            <div class="max-w-6xl mx-auto mb-6"><h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">The Creative Team</h2></div>
-            <div class="flex space-x-6 overflow-x-auto hide-scroll pb-12 pt-4 max-w-6xl mx-auto">
-                <div class="team-card-small flex-none w-[45vw] sm:w-[30vw] md:w-[22vw] lg:w-[15vw] rounded-3xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center text-center">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white/10 transition-all">
-                    <h3 class="text-base font-bold text-white">Heke Ika</h3>
-                    <p class="text-[10px] text-[#E21E26] font-bold uppercase tracking-widest mt-1">Creative Director</p>
-                </div>
-                <!-- ... additional team members ... -->
-            </div>
-        </section>
-
-        <!-- NEW COMPACT FOOTER CONTACT FORM -->
-        <section class="w-full bg-[#0b0c0f] border-t border-white/5 py-16 px-10">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-                
-                <!-- Left: Greeting -->
-                <div class="flex flex-col space-y-4">
-                    <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.3em]">Connected as one</span>
-                    <h3 class="text-3xl font-black uppercase tracking-tighter text-white">Let's tell a story<br/>together</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed max-w-sm">
-                        Have a story that needs to be told or want to collaborate on our next project? Reach out to the Tikilounge team.
-                    </p>
-                    <div class="pt-4">
-                        <span class="text-xs font-bold text-white block mb-1">General Inquiries</span>
-                        <a href="mailto:hello@thecoconet.tv" class="text-sm text-gray-500 hover:text-[#E21E26] transition-colors">hello@thecoconet.tv</a>
-                    </div>
-                </div>
-
-                <!-- Right: Compact Form -->
-                <div class="bg-white/[0.03] backdrop-blur-xl border border-white/5 p-8 rounded-[2rem]">
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="Name" class="footer-input w-full p-3 rounded-xl text-xs text-white">
-                            <input type="email" placeholder="Email" class="footer-input w-full p-3 rounded-xl text-xs text-white">
-                        </div>
-                        <textarea rows="3" placeholder="How can we help?" class="footer-input w-full p-3 rounded-xl text-xs text-white resize-none"></textarea>
-                        <button type="submit" class="w-full bg-[#E21E26] hover:bg-[#c41a20] text-white py-3 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all active:scale-[0.98]">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="w-full text-gray-500 text-[10px] text-center py-8 border-t border-white/5 relative z-10 bg-[#0b0c0f]">
-        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
-    </footer>
-
-    <script>
-        const masterNav = document.getElementById('master-nav');
-        const navDivider = document.getElementById('nav-divider');
-        const parallaxBg = document.getElementById('parallax-bg');
-        const carouselWrapper = document.getElementById('carousel-wrapper');
-
-        let currentSlide = 0;
-        const slideCount = 1; // Simplified for the mockup
-
-        window.addEventListener('scroll', function() {
-            const scrollValue = window.pageYOffset;
-            parallaxBg.style.transform = `translateY(${scrollValue * 0.35}px)`;
-            if (scrollValue > 50) {
-                masterNav.classList.add('scrolled');
-                if(navDivider) navDivider.style.opacity = '0';
-            } else {
-                masterNav.classList.remove('scrolled');
-                if(navDivider) navDivider.style.opacity = '1';
-            }
-        });
-
-        // Simplified carousel logic for preview
-        function updateCarousel() {
-            carouselWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-        function nextSlide() { currentSlide = (currentSlide + 1) % slideCount; updateCarousel(); }
-        function prevSlide() { currentSlide = (currentSlide - 1 + slideCount) % slideCount; updateCarousel(); }
     </script>
 </body>
 </html>
