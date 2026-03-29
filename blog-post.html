@@ -79,7 +79,7 @@
         <div class="absolute inset-x-0 bottom-0 bg-[#0b0c0f] h-32"></div>
     </div>
 
-    <!-- Main Navigation Pill Box (Now Fixed to Top) -->
+    <!-- Main Navigation Pill Box (Fixed to Top) -->
     <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
         <div class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-x-auto hide-scroll pointer-events-auto">
             <button class="active-pill bg-[#f9f9f9] text-black px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center space-x-1.5 shrink-0 transition-transform active:scale-95">
@@ -113,12 +113,12 @@
     <main class="relative z-10 w-full pb-20">
         
         <!-- Hero Content Layer (Acting as Page Header) -->
-        <section class="relative w-full h-[75vh] flex flex-col justify-end pb-12">
-            <!-- Page Header Typography - Aligned to max-w-6xl -->
-            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full px-8 sm:px-12">
+        <section class="relative w-full h-[80vh] flex flex-col justify-end pb-12">
+            <!-- Header typography sits in a wider container (max-w-6xl) to look further left than the body -->
+            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full px-10">
                 <div class="flex flex-col mb-2 font-sans">
                     <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">The Coconet Presents</span>
-                    <h1 class="text-5xl sm:text-7xl lg:text-[6rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
+                    <h1 class="text-5xl sm:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
                         Voices of<br/>the Island
                     </h1>
                     <span class="text-lg sm:text-xl lg:text-3xl font-light uppercase mt-6 text-white drop-shadow-md tracking-[0.2em] max-w-4xl leading-relaxed">
@@ -129,7 +129,7 @@
                 <!-- Metadata line -->
                 <div class="flex items-center space-x-6 mt-8 text-gray-300">
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-400 border border-white/10"></div>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-400 border border-white/10 shadow-lg"></div>
                         <span class="text-base font-bold tracking-wide">By Heke Ika</span>
                     </div>
                     <span class="text-xs font-medium tracking-[0.1em] uppercase opacity-60">March 29, 2026 • 6 Min Read</span>
@@ -137,9 +137,9 @@
             </div>
         </section>
 
-        <!-- Blog Post Content Section - Now wider (max-w-6xl) and aligned -->
-        <section class="relative z-20 w-full px-8 sm:px-12 mt-0 mb-16"> 
-            <div class="max-w-6xl mx-auto py-10 sm:py-16">
+        <!-- Blog Post Content Section - Narrowed slightly (max-w-5xl) for hierarchy -->
+        <section class="relative z-20 w-full mt-0 mb-16"> 
+            <div class="max-w-5xl mx-auto py-10 sm:py-16 px-10"> <!-- px-10 ensures at least 40px padding -->
                 
                 <!-- Article Body -->
                 <div class="article-content text-lg sm:text-xl lg:text-2xl font-light leading-relaxed">
@@ -181,7 +181,7 @@
 
         <!-- Compact Comments Section -->
         <section class="px-8 sm:px-12 py-16 bg-[#16181f]/40 backdrop-blur-sm border-t border-white/5">
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-5xl mx-auto px-10"> <!-- Aligned to widened article -->
                 <div class="flex items-center justify-between mb-8">
                     <h3 class="text-xl font-black tracking-tight text-white uppercase flex items-center">
                         Community <span class="ml-3 text-[10px] text-gray-500 font-bold bg-white/5 px-2 py-0.5 rounded-full border border-white/5">4</span>
