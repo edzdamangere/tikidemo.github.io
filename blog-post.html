@@ -53,7 +53,7 @@
         }
 
         .article-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             line-height: 1.9;
             color: #d1d5db;
         }
@@ -70,13 +70,13 @@
 <body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased overflow-x-hidden selection:bg-white/30 relative">
 
     <!-- FULL SCREEN HERO BACKGROUND -->
-    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[85vh] z-0 pointer-events-none">
+    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[95vh] z-0 pointer-events-none">
         <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop" alt="Pacific Cultural Performance" class="absolute inset-0 w-full h-full object-cover object-[center_30%] opacity-80 brightness-[0.5] saturate-[1.2]">
         
-        <!-- Shadow Gradients for Text Legibility & Background Blending -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/60 to-transparent w-[85%]"></div>
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent h-[50%]"></div>
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] to-transparent h-32"></div>
+        <!-- Deepened Gradients for wider text legibility -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/70 to-transparent w-full"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/80 to-transparent h-[70%]"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-[#0b0c0f] h-32"></div>
     </div>
 
     <!-- Main Navigation Pill Box -->
@@ -113,37 +113,37 @@
     <main class="relative z-10 w-full pb-20">
         
         <!-- Hero Content Layer (Acting as Page Header) -->
-        <section class="relative w-full h-[70vh] flex flex-col justify-end px-8 sm:px-12 pb-16">
-            <!-- Page Header Typography -->
-            <div class="relative z-20 flex flex-col items-start max-w-5xl mb-[2vh]">
+        <section class="relative w-full h-[75vh] flex flex-col justify-end pb-12">
+            <!-- Page Header Typography - Aligned to max-w-6xl -->
+            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full px-8 sm:px-12">
                 <div class="flex flex-col mb-2 font-sans">
                     <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">The Coconet Presents</span>
-                    <h1 class="text-5xl sm:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-white drop-shadow-2xl">
+                    <h1 class="text-5xl sm:text-7xl lg:text-[6rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
                         Voices of<br/>the Island
                     </h1>
-                    <span class="text-lg sm:text-xl lg:text-3xl font-light uppercase mt-6 text-white drop-shadow-md tracking-[0.2em] max-w-3xl leading-relaxed">
+                    <span class="text-lg sm:text-xl lg:text-3xl font-light uppercase mt-6 text-white drop-shadow-md tracking-[0.2em] max-w-4xl leading-relaxed">
                         Celebrating the Rhythm and Soul of Pacific Performance
                     </span>
                 </div>
                 
                 <!-- Metadata line -->
-                <div class="flex items-center space-x-6 mt-6 text-gray-300">
+                <div class="flex items-center space-x-6 mt-8 text-gray-300">
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-400"></div>
-                        <span class="text-sm font-bold tracking-wide">By Heke Ika</span>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-400 border border-white/10"></div>
+                        <span class="text-base font-bold tracking-wide">By Heke Ika</span>
                     </div>
                     <span class="text-xs font-medium tracking-[0.1em] uppercase opacity-60">March 29, 2026 • 6 Min Read</span>
                 </div>
             </div>
         </section>
 
-        <!-- Blog Post Content Section -->
-        <section class="relative z-20 w-full px-8 sm:px-12 mt-4 mb-16"> 
-            <div class="max-w-4xl mx-auto bg-[#1c1e25]/60 backdrop-blur-xl border border-white/10 p-12 sm:p-20 rounded-[2.5rem] shadow-[0_50px_120px_-30px_rgba(0,0,0,0.9)]">
+        <!-- Blog Post Content Section - Now wider (max-w-6xl) and aligned -->
+        <section class="relative z-20 w-full px-8 sm:px-12 mt-0 mb-16"> 
+            <div class="max-w-6xl mx-auto py-10 sm:py-16">
                 
                 <!-- Article Body -->
-                <div class="article-content text-xl sm:text-2xl font-light leading-relaxed">
-                    <p class="first-letter:text-7xl first-letter:font-black first-letter:text-white first-letter:mr-4 first-letter:float-left first-letter:leading-none mt-2">
+                <div class="article-content text-xl sm:text-2xl lg:text-3xl font-light leading-relaxed">
+                    <p class="first-letter:text-8xl first-letter:font-black first-letter:text-white first-letter:mr-5 first-letter:float-left first-letter:leading-none mt-2">
                         In the heart of the Pacific, performance is not just an act—it is a heartbeat. When the drums begin their thunderous call, they speak a language that transcends borders and connects every island across the Great Blue. This is the story of how our movement keeps our history alive.
                     </p>
                     
@@ -151,7 +151,7 @@
                         The energy of a synchronized Pacific performance is undeniable. Every stomp of the foot, every gesture of the hand, and every chant delivered with visceral power serves as a living archive. We don't just tell stories through books; we tell them through the sweat and spirit of our dancers.
                     </p>
 
-                    <blockquote class="my-16 border-l-4 border-white pl-10 italic text-3xl text-white font-medium leading-snug">
+                    <blockquote class="my-20 border-l-[6px] border-white pl-12 italic text-3xl sm:text-4xl text-white font-medium leading-snug">
                         "When we dance, we are never alone. We carry the strength of ten thousand ancestors in our voices and the rhythm of the tides in our veins."
                     </blockquote>
 
@@ -181,7 +181,7 @@
 
         <!-- Compact Comments Section -->
         <section class="px-8 sm:px-12 py-16 bg-[#16181f]/40 backdrop-blur-sm border-t border-white/5">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-6xl mx-auto">
                 <div class="flex items-center justify-between mb-8">
                     <h3 class="text-xl font-black tracking-tight text-white uppercase flex items-center">
                         Community <span class="ml-3 text-[10px] text-gray-500 font-bold bg-white/5 px-2 py-0.5 rounded-full border border-white/5">4</span>
@@ -192,24 +192,24 @@
                 <div class="flex space-x-4 mb-10">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0 border border-white/10"></div>
                     <div class="grow relative">
-                        <textarea placeholder="Join the conversation..." class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all min-h-[60px] max-h-[150px] text-base"></textarea>
+                        <textarea placeholder="Join the conversation..." class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all min-h-[80px] max-h-[150px] text-lg"></textarea>
                         <div class="flex justify-end mt-2">
-                            <button class="bg-white text-black px-5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-sm">Post</button>
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-sm">Post</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Scrollable Comment List -->
-                <div class="comments-scroll max-h-[420px] overflow-y-auto pr-4 space-y-8">
+                <div class="comments-scroll max-h-[420px] overflow-y-auto pr-6 space-y-8">
                     <!-- Comment 1 -->
                     <div class="flex space-x-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 shrink-0 border border-white/10"></div>
                         <div class="grow">
                             <div class="flex items-center space-x-2 mb-1">
-                                <span class="font-bold text-white text-sm">Siale M.</span>
+                                <span class="font-bold text-white text-base">Siale M.</span>
                                 <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">• 2h</span>
                             </div>
-                            <p class="text-gray-300 text-base leading-relaxed font-light">The photo at the top is incredible! You can almost hear the drums through the screen. This is what the Coconet is all about.</p>
+                            <p class="text-gray-300 text-lg leading-relaxed font-light">The energy is incredible! You can almost hear the drums through the screen. This is what the Coconet is all about.</p>
                             <div class="flex items-center space-x-4 mt-3">
                                 <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Like (12)</button>
                                 <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Reply</button>
@@ -222,10 +222,10 @@
                         <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-400 to-rose-500 shrink-0 border border-white/10"></div>
                         <div class="grow">
                             <div class="flex items-center space-x-2 mb-1">
-                                <span class="font-bold text-white text-sm">Mele Tu'i</span>
+                                <span class="font-bold text-white text-base">Mele Tu'i</span>
                                 <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">• 5h</span>
                             </div>
-                            <p class="text-gray-300 text-base leading-relaxed font-light">Absolutely breath-taking. The power of our people is truly in our stories and our movements. Thank you for sharing this.</p>
+                            <p class="text-gray-300 text-lg leading-relaxed font-light">Absolutely breath-taking. The power of our people is truly in our stories and our movements. Thank you for sharing this.</p>
                             <div class="flex items-center space-x-4 mt-3">
                                 <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Like (8)</button>
                                 <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Reply</button>
