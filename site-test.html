@@ -14,11 +14,12 @@
             background-color: #0b0c0f;
         }
 
-        /* Sidebar Styling */
+        /* Sidebar Styling with Autohide */
         #sidebar {
             width: 72px;
             height: 100vh;
-            background-color: #0b0c0f;
+            background-color: rgba(11, 12, 15, 0.8);
+            backdrop-filter: blur(12px);
             border-right: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -28,7 +29,16 @@
             left: 0;
             top: 0;
             z-index: 100;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Collapse by default - leaves a 8px visual hint */
+            transform: translateX(-64px); 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reveal on hover */
+        #sidebar:hover {
+            transform: translateX(0);
+            background-color: #0b0c0f;
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
         }
 
         /* Tooltip style labels on hover */
@@ -45,6 +55,14 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
+            /* Ensure icons stay centered even when sidebar is partially hidden */
+            margin-left: 64px; 
+            transform: translateX(-32px);
+        }
+
+        #sidebar:hover .nav-item {
+            margin-left: 0;
+            transform: translateX(0);
         }
 
         .nav-item:hover {
@@ -84,10 +102,10 @@
             transform: translateX(0);
         }
 
-        /* Viewport Container */
+        /* Viewport Container - Now full width */
         #main-viewport {
-            margin-left: 72px;
-            width: calc(100% - 72px);
+            margin-left: 0;
+            width: 100%;
             height: 100vh;
             border: none;
             background: #000;
