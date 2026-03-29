@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coconet | Stories from the Moana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar to match the sleek design */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4b4e5a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #81838d; }
+
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+
+        body {
+            background-color: #0b0c0f;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav Pill Animation */
+        .nav-pill { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover:not(.active-pill) {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Brand Red Implementation */
+        .active-pill {
+            background-color: #E21E26 !important; /* Rich Red from Logo */
+            color: white !important;
+            box-shadow: 0 4px 14px 0 rgba(226, 30, 38, 0.3);
+        }
+
+        /* Parallax Optimization */
+        #parallax-bg { will-change: transform; }
+
+        /* Uniform Blog Card Transitions */
+        .blog-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .blog-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+        }
+
+        /* Dynamic Nav Transitions */
+        #logo-text { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scrolled #logo-text { max-width: 0; opacity: 0; margin-left: 0; padding-right: 0; }
+        .scrolled .nav-item { padding-left: 1.5rem; padding-right: 1.5rem; }
+    </style>
+</head>
+<body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased overflow-x-hidden selection:bg-white/30 relative">
+
+    <!-- FULL SCREEN HERO BACKGROUND (Updated with User Provided Image) -->
+    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[85vh] z-0 pointer-events-none overflow-hidden bg-black">
+        <img src="https://www.ageingwellchallenge.co.nz/wp-content/uploads/2017/01/Pacific-women-smiling-1500x994.jpg" 
+             alt="Pacific women smiling" 
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-80 brightness-[0.6] saturate-[1.2]">
+        
+        <!-- Legibility Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full z-20"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/80 to-transparent h-[70%] z-20"></div>
+    </div>
+
+    <!-- Dynamic Sticky Navigation -->
+    <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
+        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
+            <div id="logo-container" class="flex items-center h-full shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
+                    <span class="text-[#E21E26] font-black text-lg">C</span>
+                </div>
+                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
+                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                </div>
+            </div>
+            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
+            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>Home</span>
+                </button>
+                <button class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">
+                    <span>Stories</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>Documentaries</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>About</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 w-full pb-32">
+        
+        <!-- Collection Header -->
+        <section class="relative w-full h-[75vh] flex flex-col justify-end pb-32 lg:pb-48">
+            <div class="relative z-30 flex flex-col items-start max-w-6xl mx-auto w-full px-10">
+                <div class="flex flex-col mb-4 font-sans">
+                    <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">Our Voices</span>
+                    <h1 class="text-5xl sm:text-7xl lg:text-[6rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
+                        Stories from<br/>across the moana
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid Section (Sitting over lower part of hero) -->
+        <section class="relative z-20 w-full -mt-24 lg:-mt-32"> 
+            <div class="max-w-6xl mx-auto px-10">
+                
+                <!-- Unified Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    
+                    <!-- Blog Post 1 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Rhythm">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em]">Culture</span>
+                                <div class="flex space-x-3 text-gray-500">
+                                    <button class="hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></button>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">The Rhythm of Siva</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                Explore how traditional Samoan dance serves as a living archive, preserving history through every graceful movement and precise beat.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Pacific Beats">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em]">Music</span>
+                                <div class="flex space-x-3 text-gray-500">
+                                    <button class="hover:text-white transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.2-4.358-2.621-6.78-6.979-6.98-1.28-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/></svg></button>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">Pacific Beats: Vol 4</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                Listen to the latest contemporary Pacific artists who are blending urban hip-hop with the traditional chants of their elders.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Ocean Voyagers">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em] mb-4">History</span>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">Master Navigators</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                Ancient knowledge of star-pathing continues to guide Pacific voyagers across the world's largest ocean using only nature as a map.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 4 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Community">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em] mb-4">Community</span>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">Connected as One</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                The strength of the Pacific lies in the collective. Witness how modern village life continues to center around ancestral wisdom.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 5 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Flavors">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em] mb-4">Lifestyle</span>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">Tastes of Tuvalu</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                A sensory journey into the unique flavors and sustainable culinary traditions of Tuvalu that have fed families for centuries.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 6 -->
+                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Sound">
+                        </div>
+                        <div class="p-8 flex flex-col grow">
+                            <span class="text-[10px] font-bold text-[#E21E26] uppercase tracking-[0.2em] mb-4">Archive</span>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-white mb-4 leading-none">Wisdom of Elders</h3>
+                            <p class="text-gray-400 font-light leading-relaxed mb-8 grow">
+                                Oral histories captured in Rarotonga, ensuring the delicate threads of our past aren't lost to the shifting tides of time.
+                            </p>
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read More &rarr;</span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-20 flex justify-center space-x-4">
+                    <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white bg-[#E21E26] border-[#E21E26] shadow-lg transition-all">1</button>
+                    <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition-all">2</button>
+                    <button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition-all">3</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 mt-0 relative z-10 bg-[#0b0c0f]">
+        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
+    </footer>
+
+    <script>
+        const masterNav = document.getElementById('master-nav');
+        const navDivider = document.getElementById('nav-divider');
+        const parallaxBg = document.getElementById('parallax-bg');
+
+        window.addEventListener('scroll', function() {
+            const scrollValue = window.pageYOffset;
+            
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translateY(${scrollValue * 0.35}px)`;
+            }
+
+            if (scrollValue > 50) {
+                masterNav.classList.add('scrolled');
+                if(navDivider) navDivider.style.opacity = '0';
+            } else {
+                masterNav.classList.remove('scrolled');
+                if(navDivider) navDivider.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
