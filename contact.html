@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coconet | Get in Touch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4b4e5a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #81838d; }
+
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+
+        body {
+            background-color: #0b0c0f;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden; /* Desktop view lock */
+        }
+
+        @media (max-height: 800px), (max-width: 1024px) {
+            body { overflow: auto; }
+        }
+
+        .nav-pill { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover:not(.active-pill) {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Brand Red Implementation */
+        .active-pill {
+            background-color: #E21E26 !important;
+            color: white !important;
+            box-shadow: 0 4px 14px 0 rgba(226, 30, 38, 0.3);
+        }
+
+        /* Dynamic Nav Transitions */
+        #logo-text {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolled #logo-text {
+            max-width: 0;
+            opacity: 0;
+            margin-left: 0;
+            padding-right: 0;
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #E21E26;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased selection:bg-white/30 relative">
+
+    <!-- FULL SCREEN HERO BACKGROUND -->
+    <div id="parallax-bg" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden bg-black">
+        <!-- Sunset Beach Hero -->
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop" 
+             alt="Sunset Beach" 
+             class="absolute inset-0 w-full h-full object-cover opacity-80 brightness-[0.5] saturate-[1.1]">
+        
+        <!-- Legibility Gradients -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full z-20"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/80 to-transparent h-[70%] z-20"></div>
+    </div>
+
+    <!-- Dynamic Sticky Navigation -->
+    <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
+        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
+            <div id="logo-container" class="flex items-center h-full shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
+                    <span class="text-[#E21E26] font-black text-lg">C</span>
+                </div>
+                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
+                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                </div>
+            </div>
+            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2"></div>
+            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2">
+                <button class="nav-pill text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0">
+                    <span>Home</span>
+                </button>
+                <button class="nav-pill text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0">
+                    <span>Stories</span>
+                </button>
+                <button class="nav-pill text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0">
+                    <span>Documentaries</span>
+                </button>
+                <button class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0">
+                    <span>Contact</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content: Viewport Centered -->
+    <main class="relative z-30 w-full min-h-screen flex flex-col justify-center px-10 py-24 lg:py-0">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left Column: Greeting & Info -->
+            <div class="flex flex-col items-start space-y-8">
+                <div class="font-sans">
+                    <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">Connected as one</span>
+                    <h1 class="text-5xl sm:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tighter leading-[0.9] text-white drop-shadow-2xl">
+                        Get in<br/>touch
+                    </h1>
+                </div>
+                
+                <div class="max-w-md space-y-6">
+                    <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">
+                        Talofa! We'd love to hear from you. Whether you have a story that needs to be told or a question about our documentary projects, reach out and let's start a conversation.
+                    </p>
+                    
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#E21E26]/50 transition-colors">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <span class="text-gray-400 font-medium tracking-wide">hello@thecoconet.tv</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#E21E26]/50 transition-colors">
+                                <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <span class="text-gray-400 font-medium tracking-wide">Auckland, New Zealand</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div class="relative">
+                <div class="bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-8 sm:p-12 rounded-[2.5rem] shadow-2xl">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 ml-1">Full Name</label>
+                                <input type="text" placeholder="Your Name" class="form-input w-full p-4 rounded-2xl text-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 ml-1">Email Address</label>
+                                <input type="email" placeholder="email@example.com" class="form-input w-full p-4 rounded-2xl text-white">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 ml-1">Message</label>
+                            <textarea rows="4" placeholder="Tell us about your story..." class="form-input w-full p-4 rounded-2xl text-white resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#E21E26] hover:bg-[#c41a20] text-white py-4 rounded-2xl font-bold uppercase tracking-[0.2em] text-sm shadow-lg shadow-red-900/20 transition-all active:scale-[0.98]">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#E21E26]/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer: Pinned at bottom -->
+    <footer class="fixed bottom-0 left-0 w-full text-gray-500 text-[11px] text-center py-8 z-30">
+        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
+    </footer>
+
+    <script>
+        const masterNav = document.getElementById('master-nav');
+        const navDivider = document.getElementById('nav-divider');
+
+        // Nav State Update on Scroll
+        window.addEventListener('scroll', function() {
+            const scrollValue = window.pageYOffset;
+            
+            if (scrollValue > 50) {
+                masterNav.classList.add('scrolled');
+                navDivider.style.opacity = '0';
+            } else {
+                masterNav.classList.remove('scrolled');
+                navDivider.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
