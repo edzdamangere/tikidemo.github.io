@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coconet | About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar to match the sleek design */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4b4e5a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #81838d; }
+
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+
+        body {
+            background-color: #0b0c0f;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav Pill Animation */
+        .nav-pill { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover:not(.active-pill) {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Brand Red Implementation */
+        .active-pill {
+            background-color: #E21E26 !important; /* Rich Red from Logo */
+            color: white !important;
+            box-shadow: 0 4px 14px 0 rgba(226, 30, 38, 0.3);
+        }
+
+        /* Parallax Optimization */
+        #parallax-bg { will-change: transform; }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        /* Media Card Hover */
+        .media-card {
+            box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+            transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+        }
+        .media-card:hover {
+            box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+            transform: scale(1.05);
+            border-color: rgba(249, 249, 249, 0.8);
+        }
+
+        /* Dynamic Nav Transitions */
+        #logo-text {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolled #logo-text {
+            max-width: 0;
+            opacity: 0;
+            margin-left: 0;
+            padding-right: 0;
+        }
+        .scrolled .nav-item {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        /* Modal Transitions */
+        .modal-container {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            visibility: hidden;
+        }
+        .modal-container.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased overflow-x-hidden selection:bg-white/30 relative">
+
+    <!-- FULL SCREEN HERO BACKGROUND (Vibrant Technology theme) -->
+    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[85vh] z-0 pointer-events-none overflow-hidden bg-black">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop" 
+             alt="Vibrant Media Technology Background" 
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-80 brightness-[0.7] saturate-[1.4]">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/50 to-transparent w-full z-20"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/90 to-transparent h-[80%] z-20"></div>
+    </div>
+
+    <!-- Dynamic Sticky Navigation -->
+    <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
+        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
+            <div id="logo-container" class="flex items-center h-full shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
+                    <span class="text-[#E21E26] font-black text-lg">C</span>
+                </div>
+                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
+                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                </div>
+            </div>
+            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
+            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>Home</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>Stories</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
+                    <span>Documentaries</span>
+                </button>
+                <button class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">
+                    <span>About</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-30 w-full pt-48 lg:pt-56 pb-20">
+        
+        <!-- Header Section -->
+        <section class="max-w-6xl mx-auto w-full px-10 mb-16 lg:mb-20">
+            <div class="flex flex-col font-sans">
+                <span class="text-lg sm:text-xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">Our Journey</span>
+                <h1 class="text-5xl sm:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tighter leading-[0.9] text-white drop-shadow-2xl">
+                    Who We<br/>Are
+                </h1>
+            </div>
+        </section>
+
+        <!-- About Text -->
+        <section class="max-w-5xl mx-auto px-10 mb-24 lg:mb-32">
+            <div class="article-content text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-4xl">
+                <p class="text-white/90 font-medium mb-8">
+                    Tikilounge Productions is the creative heart behind thecoconet.tv, established with a singular mission: to amplify the vibrant voices and stories of the Pacific. We are a collective of storytellers, artists, and historians dedicated to preserving the cultural heartbeat of our islands while pushing the boundaries of digital media.
+                </p>
+                <p>
+                    From award-winning documentaries like Untold Pacific History to lifestyle programming that celebrates our daily rhythms, we strive for authenticity in every frame. Our work is more than production; it is a service to our ancestors and a legacy for the generations of Pacific Islanders yet to come.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Work Section (Portrait Scroller 9:16) -->
+        <section class="w-full mb-28">
+            <div class="max-w-6xl mx-auto px-10 mb-8">
+                <h2 class="text-3xl font-black uppercase tracking-tight text-white">Our Work</h2>
+                <div class="w-16 h-1 bg-[#E21E26] mt-2"></div>
+            </div>
+            
+            <div class="flex space-x-6 overflow-x-auto hide-scroll pb-10 pt-2 px-10">
+                <div onclick="openProject('Untold History', 'Documentary Series', 'A landmark series re-examining the pivotal moments of Pacific history through a uniquely indigenous lens. Untold History brings forth narratives that have often been overlooked or misconstrued.', 'bg-gradient-to-br from-rose-500 to-indigo-600')" 
+                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-rose-500 to-indigo-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Untold History</div>
+                </div>
+                <div onclick="openProject('Pacific Beats', 'Music & Culture', 'Celebrating the rhythm of the islands, Pacific Beats showcases the evolution of music and performance across the Great Blue.', 'bg-gradient-to-br from-amber-500 to-red-600')"
+                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-amber-500 to-red-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Pacific Beats</div>
+                </div>
+                <div onclick="openProject('Island Lifestyle', 'Lifestyle programming', 'A vibrant exploration of the daily lives, food, and traditions that make Pacific island life unique and enduring.', 'bg-gradient-to-br from-emerald-500 to-cyan-600')"
+                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-emerald-500 to-cyan-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Island Lifestyle</div>
+                </div>
+                <div onclick="openProject('Ocean Voyagers', 'History & Navigation', 'Telling the stories of the master navigators who traversed the vast Pacific using only the stars and the sea.', 'bg-gradient-to-br from-purple-500 to-blue-600')"
+                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-purple-500 to-blue-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Ocean Voyagers</div>
+                </div>
+                <div onclick="openProject('Cultural Legacy', 'Digital Archive', 'A digital tribute to the elders and knowledge keepers who ensure our cultural legacy is passed to future generations.', 'bg-gradient-to-br from-blue-500 to-teal-600')"
+                     class="media-card flex-none w-[45vw] sm:w-[35vw] md:w-[25vw] lg:w-[18vw] rounded-2xl border border-white/10 cursor-pointer overflow-hidden aspect-[9/16] relative bg-gradient-to-br from-blue-500 to-teal-600">
+                    <div class="absolute bottom-6 left-4 font-bold text-xs uppercase tracking-widest text-white drop-shadow-md leading-tight">Cultural Legacy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Team Section -->
+        <section class="max-w-6xl mx-auto px-10 pb-20">
+            <div class="mb-10">
+                <h2 class="text-3xl font-black uppercase tracking-tight text-white">The Team</h2>
+                <div class="w-16 h-1 bg-[#E21E26] mt-2"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div onclick="openBio('Heke Ika', 'Creative Director', 'Heke is the visionary behind our visual identity, dedicated to documenting the shifting tides of Pacific culture with truth and soul.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop')" 
+                     class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Heke Ika">
+                    <h3 class="text-base font-bold text-white text-center">Heke Ika</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Creative</p>
+                </div>
+                <div onclick="openBio('Mele Tu\'i', 'Lead Producer', 'With a master\'s touch in organization and flow, Mele ensures our narratives bridge historical depths and modern horizons.', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop')"
+                     class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Mele Tu'i">
+                    <h3 class="text-base font-bold text-white text-center">Mele Tu'i</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Producer</p>
+                </div>
+                <div onclick="openBio('Siale M.', 'Historical Researcher', 'Siale uncovers the untold threads of our history within the deep Pacific archives, providing the truth that fuels our stories.', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop')"
+                     class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Siale M.">
+                    <h3 class="text-base font-bold text-white text-center">Siale M.</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">History</p>
+                </div>
+                <div onclick="openBio('Laka S.', 'Director of Photography', 'Laka defines the visual pulse of Tikilounge, prioritizing natural light and visceral intimacy in every frame.', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop')"
+                     class="group flex flex-col items-center p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&auto=format&fit=crop" class="w-16 h-16 rounded-full object-cover mb-4 border-2 border-white/10 group-hover:border-[#E21E26] transition-all" alt="Laka S.">
+                    <h3 class="text-base font-bold text-white text-center">Laka S.</h3>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Camera</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Generic Detail Modal (Handles both Team and Work) -->
+    <div id="info-modal" class="modal-container fixed inset-0 z-[200] flex items-center justify-center px-4 bg-black/60 backdrop-blur-md">
+        <div class="bg-white/[0.03] backdrop-blur-3xl border border-white/10 p-8 sm:p-12 rounded-[2.5rem] shadow-2xl max-w-2xl w-full relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            
+            <div id="modal-content" class="flex flex-col sm:flex-row items-center sm:items-start gap-10">
+                <div id="modal-visual" class="shrink-0">
+                    <!-- Image or Visual placeholder will be injected here -->
+                </div>
+                <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <h2 id="modal-title" class="text-4xl font-black uppercase tracking-tighter text-white leading-none mb-2">Title</h2>
+                    <p id="modal-subtitle" class="text-[#E21E26] font-bold text-sm uppercase tracking-[0.2em] mb-6">Subtitle</p>
+                    <p id="modal-description" class="text-gray-300 font-light leading-relaxed text-lg mb-8">Description goes here...</p>
+                    
+                    <div id="modal-footer" class="flex space-x-4">
+                        <!-- Extra links or CTAs -->
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#E21E26]/10 rounded-full blur-3xl"></div>
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 relative z-30 bg-[#0b0c0f]">
+        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
+    </footer>
+
+    <script>
+        const masterNav = document.getElementById('master-nav');
+        const navDivider = document.getElementById('nav-divider');
+        const parallaxBg = document.getElementById('parallax-bg');
+        const infoModal = document.getElementById('info-modal');
+
+        // Scroll Handling
+        window.addEventListener('scroll', function() {
+            const scrollValue = window.pageYOffset;
+            parallaxBg.style.transform = `translateY(${scrollValue * 0.35}px)`;
+            if (scrollValue > 50) {
+                masterNav.classList.add('scrolled');
+                if(navDivider) navDivider.style.opacity = '0';
+            } else {
+                masterNav.classList.remove('scrolled');
+                if(navDivider) navDivider.style.opacity = '1';
+            }
+        });
+
+        // Modal Logic
+        function openBio(name, role, bio, img) {
+            const visual = document.getElementById('modal-visual');
+            visual.innerHTML = `<img src="${img}" class="w-32 h-32 rounded-full object-cover border-4 border-[#E21E26] shadow-2xl">`;
+            
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-subtitle').innerText = role;
+            document.getElementById('modal-description').innerText = bio;
+            document.getElementById('modal-footer').innerHTML = `
+                <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#E21E26]/20 transition-all cursor-pointer group">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </div>`;
+            
+            showModal();
+        }
+
+        function openProject(title, category, info, bgClass) {
+            const visual = document.getElementById('modal-visual');
+            visual.innerHTML = `<div class="w-32 h-56 rounded-xl ${bgClass} border border-white/20 shadow-2xl relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>`;
+            
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-subtitle').innerText = category;
+            document.getElementById('modal-description').innerText = info;
+            document.getElementById('modal-footer').innerHTML = `
+                <button class="bg-[#E21E26] text-white px-6 py-2 rounded-xl font-bold uppercase tracking-widest text-[10px] hover:bg-red-700 transition-colors">View Details</button>`;
+            
+            showModal();
+        }
+
+        function showModal() {
+            infoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            infoModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        infoModal.addEventListener('click', (e) => {
+            if (e.target === infoModal) closeModal();
+        });
+    </script>
+</body>
+</html>
