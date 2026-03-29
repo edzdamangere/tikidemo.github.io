@@ -7,29 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom scrollbar to match the sleek design */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4b4e5a;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #81838d;
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4b4e5a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #81838d; }
 
-        /* Hide scrollbar for the horizontal rows but keep functionality */
-        .hide-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
 
         body {
             background-color: #0b0c0f;
@@ -39,18 +23,21 @@
         }
 
         /* Nav Pill Animation */
-        .nav-pill {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        .nav-pill { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .nav-pill:hover:not(.active-pill) {
             background-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-1px);
         }
 
-        /* Parallax Optimization */
-        #parallax-bg {
-            will-change: transform;
+        /* Brand Red Implementation */
+        .active-pill {
+            background-color: #E21E26 !important; /* Rich Red from Logo */
+            color: white !important;
+            box-shadow: 0 4px 14px 0 rgba(226, 30, 38, 0.3);
         }
+
+        /* Parallax Optimization */
+        #parallax-bg { will-change: transform; }
 
         .article-content p {
             margin-bottom: 2rem;
@@ -58,80 +45,93 @@
             color: #d1d5db;
         }
 
+        /* Dynamic Nav Transitions */
+        #logo-text {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolled #logo-text {
+            max-width: 0;
+            opacity: 0;
+            margin-left: 0;
+            padding-right: 0;
+        }
+        .scrolled .nav-item {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
         /* Custom scrollbar for comments */
-        .comments-scroll::-webkit-scrollbar {
-            width: 4px;
-        }
-        .comments-scroll::-webkit-scrollbar-thumb {
-            background: #2a2d37;
-        }
+        .comments-scroll::-webkit-scrollbar { width: 4px; }
+        .comments-scroll::-webkit-scrollbar-thumb { background: #2a2d37; }
     </style>
 </head>
 <body class="bg-[#0b0c0f] text-[#f9f9f9] font-sans antialiased overflow-x-hidden selection:bg-white/30 relative">
 
     <!-- FULL SCREEN HERO BACKGROUND -->
-    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[95vh] z-0 pointer-events-none">
-        <!-- Archival photograph with high vibrancy and warmth -->
-        <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=1920&auto=format&fit=crop" alt="War Veteran Archival Portrait" class="absolute inset-0 w-full h-full object-cover object-center opacity-90 brightness-[0.8] saturate-[1.2]">
+    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[95vh] z-0 pointer-events-none overflow-hidden bg-black">
+        <!-- Static Hero Image (War Veteran Archival Portrait) -->
+        <img id="fallback-img" src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=1920&auto=format&fit=crop" 
+             alt="War Veteran Archival Portrait" 
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-90 brightness-[0.8] saturate-[1.2] z-0">
         
         <!-- Legibility Gradient (Left to Right) -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full z-20"></div>
         
         <!-- FADE TO BLACK (Bottom to Top) - Multi-layered to remove hard edges -->
-        <!-- Primary long fade -->
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/80 to-transparent h-[60%]"></div>
-        <!-- Extra density at the very bottom for a smooth bleed into the page body -->
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] to-transparent h-48"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/80 to-transparent h-[70%] z-20"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] to-transparent h-48 z-20"></div>
     </div>
 
-    <!-- Main Navigation Pill Box (Fixed to Top) -->
+    <!-- Dynamic Sticky Navigation -->
     <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
-        <div class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-x-auto hide-scroll pointer-events-auto">
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-                <span>Home</span>
-            </button>
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><path d="M14 17H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                <span>Stories</span>
-            </button>
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <span>Search</span>
-            </button>
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                <span>Watchlist</span>
-            </button>
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3 .35 0 .69.07 1 .18V6h5v2h-3v7.03A3.003 3.003 0 0111 18c-1.66 0-3-1.34-3-3z"/></svg>
-                <span>Shows</span>
-            </button>
-            <button class="active-pill bg-[#f9f9f9] text-black px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center space-x-1.5 shrink-0 transition-transform active:scale-95">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M18 4v1h-2V4c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v1H6V4c0-.55-.45-1-1-1s-1 .45-1 1v16c0 .55.45 1 1 1s1-.45 1-1v-1h2v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h2v1c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
-                <span>Documentaries</span>
-            </button>
-            <button class="nav-pill text-gray-300 hover:text-white px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0">
-                <svg class="w-4 h-4 mb-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                <span>Know Your Roots</span>
-            </button>
+        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
+            
+            <!-- Dynamic Logo -->
+            <div id="logo-container" class="flex items-center h-full shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
+                    <span class="text-[#E21E26] font-black text-lg">C</span>
+                </div>
+                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
+                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                </div>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
+
+            <!-- Adaptable Menu -->
+            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0 transition-all">
+                    <span>Home</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0 transition-all">
+                    <span>Stories</span>
+                </button>
+                <!-- Rich Red Selected State -->
+                <button class="active-pill bg-[#f9f9f9] px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">
+                    <span>Documentaries</span>
+                </button>
+                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center space-x-1.5 shrink-0 transition-all">
+                    <span>Know Your Roots</span>
+                </button>
+            </div>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="relative z-10 w-full pb-20">
         
-        <!-- Hero Content Layer (Acting as Project Header) -->
+        <!-- Hero Content (Aligned Left max-w-6xl) -->
         <section class="relative w-full h-[85vh] flex flex-col justify-end pb-20">
-            <!-- Header typography aligned to max-w-6xl -->
-            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full px-10">
+            <div class="relative z-30 flex flex-col items-start max-w-6xl mx-auto w-full px-10">
                 <div class="flex flex-col mb-4 font-sans">
                     <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">The Coconet TV Presents</span>
                     <h1 class="text-5xl sm:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
                         Untold Pacific<br/>History
                     </h1>
                     
-                    <!-- Partner/Client Logos Placeholder List -->
+                    <!-- Partner Logos -->
                     <div class="flex items-center space-x-8 mt-8 opacity-90 transition-all duration-500">
                         <div class="flex items-center space-x-2">
                             <div class="w-8 h-8 border-2 border-white flex items-center justify-center font-black text-[10px]">RNZ</div>
@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 
-                <!-- Watch CTA Button -->
+                <!-- CTA -->
                 <div class="flex items-center space-x-4 mt-10">
                     <button class="bg-[#f9f9f9] text-black px-10 py-3.5 rounded text-[13px] font-bold hover:bg-gray-200 transition-colors uppercase tracking-[2px] cursor-pointer pointer-events-auto shadow-2xl flex items-center space-x-3">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -158,44 +158,38 @@
             </div>
         </section>
 
-        <!-- Project Description Section -->
+        <!-- Project Description (Narrower max-w-5xl for Hierarchy) -->
         <section class="relative z-20 w-full mt-0 mb-16"> 
             <div class="max-w-5xl mx-auto py-10 sm:py-16 px-10">
-                
-                <!-- Project Info Body -->
                 <div class="article-content text-lg sm:text-xl lg:text-2xl font-light leading-relaxed">
                     <p class="text-white font-medium mb-8 text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight">
                         Shining a light on the stories that have shaped our nations, Untold Pacific History is a landmark documentary series that re-examines the pivotal moments of our past through a uniquely Pacific lens.
                     </p>
-                    
                     <p>
-                        From the early arrivals of explorers to the complex dynamics of colonial influence and the resilient rise of sovereign identities, this series ventures deep into the archives to bring forth the narratives that have often been overlooked or misconstrued. It is an exploration of truth, memory, and the enduring spirit of our people.
+                        From the early arrivals of explorers to the complex dynamics of colonial influence and the resilient rise of sovereign identities, this series ventures deep into the archives to bring forth narratives that have often been overlooked or misconstrued. It is an exploration of truth, memory, and the enduring spirit of our people.
                     </p>
-
                     <p>
                         Through rare archival footage, expert historical analysis, and the powerful oral traditions of our elders, Untold Pacific History provides a vital educational resource and a profound tribute to the legacy of those who walked these islands before us.
                     </p>
                 </div>
 
                 <!-- Meta/Production Info -->
-                <div class="mt-16 pt-12 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start gap-8">
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-12">
-                        <div>
-                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Director</span>
-                            <span class="text-white font-medium">Tikilounge Team</span>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Released</span>
-                            <span class="text-white font-medium">2023 - 2026</span>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Episodes</span>
-                            <span class="text-white font-medium">Ongoing Series</span>
-                        </div>
-                        <div>
-                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Genre</span>
-                            <span class="text-white font-medium">History, Doco</span>
-                        </div>
+                <div class="mt-16 pt-12 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-12">
+                    <div>
+                        <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Director</span>
+                        <span class="text-white font-medium">Tikilounge Team</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Released</span>
+                        <span class="text-white font-medium">2023 - 2026</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Episodes</span>
+                        <span class="text-white font-medium">Ongoing Series</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2">Genre</span>
+                        <span class="text-white font-medium">History, Doco</span>
                     </div>
                 </div>
             </div>
@@ -210,7 +204,7 @@
                     </h3>
                 </div>
 
-                <!-- Compact Input Area -->
+                <!-- Compact Input -->
                 <div class="flex space-x-4 mb-10">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 shrink-0 border border-white/10"></div>
                     <div class="grow relative">
@@ -221,9 +215,7 @@
                     </div>
                 </div>
 
-                <!-- Scrollable Comment List -->
                 <div class="comments-scroll max-h-[300px] overflow-y-auto pr-6 space-y-8">
-                    <!-- Comment 1 -->
                     <div class="flex space-x-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-400 to-orange-500 shrink-0 border border-white/10"></div>
                         <div class="grow">
@@ -231,15 +223,14 @@
                                 <span class="font-bold text-white text-base">Tiare K.</span>
                                 <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">• 1d</span>
                             </div>
-                            <p class="text-gray-300 text-lg leading-relaxed font-light">This series should be mandatory in every school curriculum across the Pacific. Truth-telling is the only way to move forward together.</p>
+                            <p class="text-gray-300 text-lg leading-relaxed font-light">This series should be mandatory in every school curriculum across the Pacific. Truth-telling is vital.</p>
                             <div class="flex items-center space-x-4 mt-3">
-                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Like (24)</button>
-                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Reply</button>
+                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase transition-colors">Like (24)</button>
+                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase transition-colors">Reply</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Comment 2 -->
                     <div class="flex space-x-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-400 to-emerald-500 shrink-0 border border-white/10"></div>
                         <div class="grow">
@@ -249,37 +240,42 @@
                             </div>
                             <p class="text-gray-300 text-lg leading-relaxed font-light">Finally, history told by us. The archival footage in the latest episode was absolutely incredible to see.</p>
                             <div class="flex items-center space-x-4 mt-3">
-                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Like (15)</button>
-                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Reply</button>
+                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase transition-colors">Like (15)</button>
+                                <button class="text-[10px] font-bold text-gray-500 hover:text-white uppercase transition-colors">Reply</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Simple Footer -->
     <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 mt-0 relative z-10 bg-[#0b0c0f]">
-        <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-6 px-4 font-medium">
-            <a href="#" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
-            <a href="#" class="hover:text-gray-300 transition-colors">Terms of Service</a>
-            <a href="#" class="hover:text-gray-300 transition-colors">Help</a>
-            <a href="#" class="hover:text-gray-300 transition-colors">About Us</a>
-        </div>
         <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
     </footer>
 
-    <!-- Parallax Scroll Script -->
     <script>
+        const masterNav = document.getElementById('master-nav');
+        const navDivider = document.getElementById('nav-divider');
+        const parallaxBg = document.getElementById('parallax-bg');
+
+        // Scroll Handling for Parallax + Dynamic Nav
         window.addEventListener('scroll', function() {
             const scrollValue = window.pageYOffset;
-            const bg = document.getElementById('parallax-bg');
-            // Background moves at 35% of the scroll speed for a deeper effect
-            bg.style.transform = 'translateY(' + (scrollValue * 0.35) + 'px)';
+            
+            // Background Parallax
+            parallaxBg.style.transform = `translateY(${scrollValue * 0.35}px)`;
+
+            // Nav State Update
+            if (scrollValue > 50) {
+                masterNav.classList.add('scrolled');
+                navDivider.style.opacity = '0';
+            } else {
+                masterNav.classList.remove('scrolled');
+                navDivider.style.opacity = '1';
+            }
         });
     </script>
-
 </body>
 </html>
