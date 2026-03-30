@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coconet | Stories from the Moana</title>
+    <title>Tikilounge | Stories from the Moana</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom scrollbar to match the sleek design */
@@ -73,29 +73,22 @@
     <!-- Dynamic Sticky Navigation -->
     <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
         <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl overflow-hidden pointer-events-auto transition-all duration-500">
-            <div id="logo-container" class="flex items-center h-full shrink-0">
-                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
-                    <span class="text-[#E21E26] font-black text-lg">C</span>
+            <a href="index.html" id="logo-container" class="flex items-center h-full shrink-0 no-underline">
+                <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 ml-[2px] shadow-sm border border-white/20 bg-white">
+                    <img src="img/tiki-head-bg.png" alt="Tikilounge" class="w-full h-full object-cover">
                 </div>
-                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
-                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
-                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                <div id="logo-text" class="flex items-center ml-3 pr-4 overflow-hidden max-w-[200px] opacity-100">
+                    <img src="img/logotype-2.png" alt="Tikilounge Productions" class="h-7 w-auto object-contain">
                 </div>
-            </div>
+            </a>
             <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
             <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>Home</span>
-                </button>
-                <button class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">
-                    <span>Stories</span>
-                </button>
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>Documentaries</span>
-                </button>
-                <button class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">
-                    <span>About</span>
-                </button>
+                <a href="index.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Home</span></a>
+                <a href="about-us.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>About Us</span></a>
+                <a href="showcase.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Showcase</span></a>
+                <a href="stories.html" class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-transform active:scale-95 no-underline"><span>Stories</span></a>
+                <a href="team.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Our Team</span></a>
+                <a href="contact.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Contact</span></a>
             </div>
         </div>
     </div>
@@ -123,7 +116,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                     
                     <!-- Blog Post 1 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Rhythm">
                         </div>
@@ -143,7 +136,7 @@
                     </article>
 
                     <!-- Blog Post 2 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Pacific Beats">
                         </div>
@@ -163,7 +156,7 @@
                     </article>
 
                     <!-- Blog Post 3 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Ocean Voyagers">
                         </div>
@@ -178,7 +171,7 @@
                     </article>
 
                     <!-- Blog Post 4 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Community">
                         </div>
@@ -193,7 +186,7 @@
                     </article>
 
                     <!-- Blog Post 5 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Flavors">
                         </div>
@@ -208,7 +201,7 @@
                     </article>
 
                     <!-- Blog Post 6 -->
-                    <article class="blog-card group flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden">
+                    <article class="blog-card group cursor-pointer flex flex-col bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] overflow-hidden" onclick="window.location.href='blog-post.html'">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Island Sound">
                         </div>
@@ -235,9 +228,17 @@
 
     </main>
 
-    <!-- Simple Footer -->
-    <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 mt-0 relative z-10 bg-[#0b0c0f]">
-        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions / The Coconet TV</p>
+        <!-- Footer -->
+    <footer class="w-full text-gray-500 text-[11px] text-center py-10 border-t border-white/5 relative z-30 bg-[#0b0c0f]">
+        <nav class="flex justify-center flex-wrap gap-x-8 gap-y-2 mb-5">
+            <a href="index.html"     class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Home</a>
+            <a href="about-us.html"  class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">About Us</a>
+            <a href="showcase.html"  class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Showcase</a>
+            <a href="stories.html"   class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Stories</a>
+            <a href="team.html"      class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Our Team</a>
+            <a href="contact.html"   class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Contact</a>
+        </nav>
+        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions</p>
     </footer>
 
     <script>

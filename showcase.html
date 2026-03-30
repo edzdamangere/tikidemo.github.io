@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coconet | Our Work</title>
+    <title>Tikilounge | Our Work</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Inherited Sleek Scrollbar */
@@ -94,21 +94,22 @@
     <!-- Sticky Navigation (Consistent with shared files) -->
     <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
         <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl pointer-events-auto transition-all duration-500">
-            <div class="flex items-center h-full shrink-0">
-                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
-                    <span class="text-[#E21E26] font-black text-lg">C</span>
+            <a href="index.html" class="flex items-center h-full shrink-0 no-underline">
+                <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 ml-[2px] shadow-sm border border-white/20 bg-white">
+                    <img src="img/tiki-head-bg.png" alt="Tikilounge" class="w-full h-full object-cover">
                 </div>
-                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
-                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
-                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                <div id="logo-text" class="flex items-center ml-3 pr-4 overflow-hidden max-w-[200px] opacity-100">
+                    <img src="img/logotype-2.png" alt="Tikilounge Productions" class="h-7 w-auto object-contain">
                 </div>
-            </div>
+            </a>
             <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
             <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
-                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">Home</a>
-                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">Stories</a>
-                <a href="#" class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">Documentaries</a>
-                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">About</a>
+                <a href="index.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Home</span></a>
+                <a href="about-us.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>About Us</span></a>
+                <a href="showcase.html" class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-transform active:scale-95 no-underline"><span>Showcase</span></a>
+                <a href="stories.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Stories</span></a>
+                <a href="team.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Our Team</span></a>
+                <a href="contact.html" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all no-underline"><span>Contact</span></a>
             </div>
         </div>
     </div>
@@ -168,7 +169,7 @@
             <div id="work-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project 1 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" data-category="docs" data-awarded="true" onclick="navigateToProject(this)">
                     <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -185,7 +186,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" data-category="stories" data-awarded="true" onclick="navigateToProject(this)">
                     <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -202,7 +203,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="series">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="series">
                     <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -219,7 +220,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="docs">
                     <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -236,7 +237,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="stories">
                     <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -253,7 +254,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="series">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="series">
                     <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -270,7 +271,7 @@
                 </div>
 
                 <!-- Project 7 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="archive">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="archive">
                     <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -287,7 +288,7 @@
                 </div>
 
                 <!-- Project 8 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="docs">
                     <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -304,7 +305,7 @@
                 </div>
 
                 <!-- Project 9 -->
-                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden cursor-pointer" onclick="navigateToProject(this)" data-category="stories">
                     <img src="https://images.unsplash.com/photo-1542641728-6ca359b085f4?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 card-gradient"></div>
                     <div class="absolute inset-0 p-8 flex flex-col justify-end">
@@ -323,8 +324,17 @@
         </section>
     </main>
 
-    <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 bg-[#0b0c0f] relative z-10">
-        <p class="tracking-widest uppercase opacity-40">© 2026 Tikilounge Productions / The Coconet TV</p>
+        <!-- Footer -->
+    <footer class="w-full text-gray-500 text-[11px] text-center py-10 border-t border-white/5 relative z-30 bg-[#0b0c0f]">
+        <nav class="flex justify-center flex-wrap gap-x-8 gap-y-2 mb-5">
+            <a href="index.html"     class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Home</a>
+            <a href="about-us.html"  class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">About Us</a>
+            <a href="showcase.html"  class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Showcase</a>
+            <a href="stories.html"   class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Stories</a>
+            <a href="team.html"      class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Our Team</a>
+            <a href="contact.html"   class="text-gray-500 hover:text-white transition-colors uppercase tracking-widest no-underline text-[10px]">Contact</a>
+        </nav>
+        <p class="tracking-widest opacity-40 uppercase">© 2026 Tikilounge Productions</p>
     </footer>
 
     <script>
@@ -367,6 +377,13 @@
                     card.style.display = 'none';
                 }
             });
+        }
+    </script>
+
+    <script>
+        function navigateToProject(card) {
+            const awarded = card.getAttribute('data-awarded') === 'true';
+            window.location.href = awarded ? 'awards.html' : 'doco.html';
         }
     </script>
 </body>
