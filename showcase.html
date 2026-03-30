@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coconet | Our Work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Inherited Sleek Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #4b4e5a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #81838d; }
+
+        body {
+            background-color: #0b0c0f;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav Pill Styles */
+        .nav-pill { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-pill:hover:not(.active-pill) {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .active-pill {
+            background-color: #E21E26 !important;
+            color: white !important;
+            box-shadow: 0 4px 14px 0 rgba(226, 30, 38, 0.3);
+        }
+
+        /* Parallax Optimization */
+        #parallax-bg { will-change: transform; }
+
+        /* Media Card Enhanced for Showcase */
+        .work-card {
+            box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px;
+            transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            position: relative;
+            overflow: hidden;
+            background-color: #16181f; /* Fallback color */
+        }
+        .work-card:hover {
+            transform: scale(1.03) translateY(-8px);
+            border-color: rgba(249, 249, 249, 0.4);
+            z-index: 10;
+        }
+        
+        /* Persistent Info + Hover Details */
+        .card-details {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            margin-top: 0;
+        }
+        .work-card:hover .card-details {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        /* Gradients */
+        .card-gradient {
+            background: linear-gradient(to top, rgba(11, 12, 15, 1) 0%, rgba(11, 12, 15, 0.7) 35%, transparent 100%);
+        }
+
+        /* Nav Animation */
+        #logo-text { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scrolled #logo-text { max-width: 0; opacity: 0; margin-left: 0; padding-right: 0; }
+        .scrolled .nav-item { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#0b0c0f] text-[#f9f9f9] selection:bg-red-500/30 overflow-x-hidden">
+
+    <!-- FULL SCREEN HERO BACKGROUND -->
+    <div id="parallax-bg" class="absolute top-0 left-0 w-full h-[100vh] z-0 pointer-events-none overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1920&auto=format&fit=crop" alt="Showcase Hero" class="absolute inset-0 w-full h-full object-cover object-[center_30%] opacity-90 brightness-[0.6] saturate-[1.1]">
+        
+        <!-- Legibility Gradient (Left to Right) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b0c0f] via-[#0b0c0f]/40 to-transparent w-full"></div>
+        
+        <!-- FADE TO BLACK (Bottom to Top) - Multi-layered to remove hard edges -->
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/90 to-transparent h-[70%] z-20"></div>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0c0f] via-[#0b0c0f]/60 to-transparent h-48 z-20"></div>
+        <div class="absolute inset-x-0 bottom-[-1px] bg-[#0b0c0f] h-20 z-30"></div>
+    </div>
+
+    <!-- Sticky Navigation (Consistent with shared files) -->
+    <div class="fixed top-0 left-0 w-full flex justify-center py-6 z-[100] px-4 pointer-events-none">
+        <div id="master-nav" class="flex items-center bg-[#1c1e25]/80 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-2xl pointer-events-auto transition-all duration-500">
+            <div class="flex items-center h-full shrink-0">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 ml-[2px] shadow-sm border border-white/20">
+                    <span class="text-[#E21E26] font-black text-lg">C</span>
+                </div>
+                <div id="logo-text" class="flex flex-col justify-center ml-3 pr-6 overflow-hidden max-w-[200px] opacity-100">
+                    <span class="text-white font-bold leading-none tracking-tighter text-sm whitespace-nowrap uppercase">The Coconet</span>
+                    <span class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mt-0.5 whitespace-nowrap">Productions</span>
+                </div>
+            </div>
+            <div id="nav-divider" class="h-6 w-[1px] bg-white/10 mx-2 transition-opacity duration-500"></div>
+            <div id="menu-container" class="flex items-center space-x-1 sm:space-x-2 px-2 transition-all duration-500">
+                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">Home</a>
+                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">Stories</a>
+                <a href="#" class="active-pill px-5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide shadow-sm flex items-center shrink-0 transition-transform active:scale-95">Documentaries</a>
+                <a href="#" class="nav-pill nav-item text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold tracking-wide flex items-center shrink-0 transition-all">About</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="relative z-10 w-full">
+        <!-- Immersive Hero Content -->
+        <section class="relative w-full h-[85vh] flex flex-col justify-end pb-24">
+            <div class="relative z-20 flex flex-col items-start max-w-6xl mx-auto w-full px-10">
+                <div class="flex flex-col mb-4 font-sans">
+                    <span class="text-xl sm:text-2xl font-bold uppercase mb-0 drop-shadow-md text-white tracking-[0.3em] opacity-80">Featured Story</span>
+                    <h1 class="text-5xl sm:text-7xl lg:text-[6.5rem] font-black uppercase tracking-tighter leading-[0.85] text-white drop-shadow-2xl">
+                        The Last<br/>Navigator
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-3xl font-light uppercase mt-6 text-white drop-shadow-md tracking-[0.2em] max-w-4xl leading-relaxed">
+                        Celestial navigation traditions of the Satawal islands
+                    </p>
+                </div>
+                <div class="flex items-center space-x-4 mt-8">
+                    <button class="bg-[#f9f9f9] text-black px-10 py-3.5 rounded text-[13px] font-bold hover:bg-gray-200 transition-colors uppercase tracking-[2px] shadow-2xl">
+                        Watch Now
+                    </button>
+                    <button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-3.5 rounded text-[13px] font-bold hover:bg-white/20 transition-colors uppercase tracking-[2px]">
+                        Project Details
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter System -->
+        <section class="max-w-6xl mx-auto px-10 mb-12 flex flex-wrap items-end justify-between gap-6">
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 mb-1">Stories from</h2>
+                <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter leading-none">The Moana</h3>
+            </div>
+            <!-- Consistent Pillbox Menu Container -->
+            <div class="flex items-center bg-[#1c1e25]/60 backdrop-blur-xl rounded-full p-[4px] border border-white/10 shadow-lg overflow-x-auto hide-scroll">
+                <button onclick="filterWork('all')" class="filter-btn active-pill px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all shrink-0">
+                    <span>All</span>
+                </button>
+                <button onclick="filterWork('stories')" class="filter-btn nav-pill text-gray-400 hover:text-white px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all shrink-0">
+                    <span>Stories</span>
+                </button>
+                <button onclick="filterWork('docs')" class="filter-btn nav-pill text-gray-400 hover:text-white px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all shrink-0">
+                    <span>Documentaries</span>
+                </button>
+                <button onclick="filterWork('series')" class="filter-btn nav-pill text-gray-400 hover:text-white px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all shrink-0">
+                    <span>Series</span>
+                </button>
+                <button onclick="filterWork('archive')" class="filter-btn nav-pill text-gray-400 hover:text-white px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all shrink-0">
+                    <span>Archive</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Work Grid -->
+        <section class="max-w-6xl mx-auto px-10 pb-20">
+            <div id="work-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.2em] mb-2 block">Documentary</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Ocean Keepers</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Protecting the sanctuary of the Cook Islands.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">24 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 block">Story</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">The Fire Dance</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">A visual poem of Samoan fire and rhythm.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">8 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="series">
+                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-teal-400 uppercase tracking-[0.2em] mb-2 block">Series</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Pacific Kitchen</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Seasonal recipes from across the Polynesian triangle.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">6 Episodes</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                    <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.2em] mb-2 block">Documentary</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Vaka Voyages</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Tracing ancestral paths across the deep blue.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">45 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                    <img src="https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 block">Story</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Island Spirit</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">The untold legacy of performance in Fiji.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">12 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="series">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-teal-400 uppercase tracking-[0.2em] mb-2 block">Series</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">The Voyagers</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Tracing the car culture that keeps our islands moving.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">8 Episodes</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="archive">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-2 block">Archive</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Voices of One</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Early recordings from the inaugural festival.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">Special</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="docs">
+                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.2em] mb-2 block">Documentary</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Lost Atolls</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">The frontline of climate change in Kiribati.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">18 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="work-card group aspect-[4/5] rounded-[2rem] border border-white/10 overflow-hidden" data-category="stories">
+                    <img src="https://images.unsplash.com/photo-1542641728-6ca359b085f4?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 card-gradient"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em] mb-2 block">Story</span>
+                        <h4 class="text-2xl font-black uppercase tracking-tighter leading-tight">Village Beats</h4>
+                        <div class="card-details">
+                            <p class="text-sm text-gray-400 font-light line-clamp-2 mb-4">Capturing the modern pulse of island music.</p>
+                            <div class="flex items-center space-x-4">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">10 Mins</span>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full text-gray-500 text-[11px] text-center py-12 border-t border-white/5 bg-[#0b0c0f] relative z-10">
+        <p class="tracking-widest uppercase opacity-40">© 2026 Tikilounge Productions / The Coconet TV</p>
+    </footer>
+
+    <script>
+        const masterNav = document.getElementById('master-nav');
+        const navDivider = document.getElementById('nav-divider');
+        const parallaxBg = document.getElementById('parallax-bg');
+
+        window.addEventListener('scroll', () => {
+            const scrollValue = window.pageYOffset;
+            if (parallaxBg) parallaxBg.style.transform = `translateY(${scrollValue * 0.35}px)`;
+
+            if (scrollValue > 50) {
+                masterNav.classList.add('scrolled');
+                if(navDivider) navDivider.style.opacity = '0';
+            } else {
+                masterNav.classList.remove('scrolled');
+                if(navDivider) navDivider.style.opacity = '1';
+            }
+        });
+
+        function filterWork(category) {
+            const cards = document.querySelectorAll('.work-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('active-pill');
+                btn.classList.add('nav-pill');
+                btn.classList.add('text-gray-400');
+            });
+            
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active-pill');
+                event.currentTarget.classList.remove('nav-pill');
+                event.currentTarget.classList.remove('text-gray-400');
+            }
+
+            cards.forEach(card => {
+                card.style.display = 'block';
+                if (category !== 'all' && card.getAttribute('data-category') !== category) {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
